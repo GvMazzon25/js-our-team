@@ -9,38 +9,57 @@ let nameFirst = '';
 let roleFirst = '';
 let imgFirst = '';
 
+//immagini
+
+//Carte
 const cards = [
-    card1 = {
+    {
         nameUtente : `Angela Carol`,
         roleUtente : `Chief Editor`,
         imageUtente : ``
     },
-    card2 = {
+    {
         nameUtente : `Walter Gordon`,
         roleUtente : `Office Manager`,
         imageUtente : ``
     },
-    card3 = {
+    {
         nameUtente : `Angela Lopez`,
         roleUtente : `Social Media Manager`,
         imageUtente : ``
     },
-    card4 = {
+    {
         nameUtente : `Scot Estrada`,
         roleUtente : `Developer`,
         imageUtente : ``
     },
-    card5 = {
+    {
         nameUtente : `Barbara Ramos`,
         roleUtente : `Graphic Designer`,
         imageUtente : ``
     },
-    cardGeneral = {
-        nameUtente : `nameFirst`,
-        roleUtente : `roleFist`,
-        imageUtente : `imgFirst`
-    }
 ]
 
 console.log(cards)
 console.table(cards)
+
+const teamContainer = document.querySelector('.team-container')
+
+for(let i = 0; i < cards.length; i++){
+    const cardItem = cards[i];
+    console.log(cardItem);
+
+    teamContainer.innerHTML += `
+    <div class="team-card">
+        <div class="card-image">
+           <img
+                src="img/wayne-barnett-founder-ceo.jpg"
+                alt="Wayne Barnett"
+              />
+            </div>
+            <div class="card-text">
+              <h3>${cardItem.nameUtente}</h3>
+              <p>${cardItem.roleUtente}</p>
+            </div>
+          </div>`
+}
